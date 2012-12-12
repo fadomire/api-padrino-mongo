@@ -1,0 +1,98 @@
+<div>
+<p>
+== Basic API using padrino and mongodb
+</p>
+<p>
+There is 2 objects : User and Post
+</p>
+<p>
+  Following routes are availables :
+  <table>
+    <tr>
+      <td>URL</td>
+      <td>REQUEST</td>
+      <td>PATH</td>
+    </tr>
+    <tr>
+      <td>(:posts, :index)</td>
+      <td>GET</td>
+      <td>/posts</td>
+    </tr>
+    <tr>
+      <td>(:posts, :search)</td>
+      <td>GET</td>
+      <td>/search</td>
+    </tr>
+    <tr>
+      <td>(:posts, :create)</td>
+      <td>POST</td>
+      <td>/posts</td>
+    </tr>
+    <tr>
+      <td>(:posts, :show)</td>
+      <td>GET</td>
+      <td>/posts/:id</td>
+    </tr>
+    <tr>
+      <td>(:posts, :update)</td>
+      <td>PUT</td>
+      <td>/posts/:id</td>
+    </tr>
+    <tr>
+      <td>(:posts, :destroy)</td>
+      <td>DELETE</td>
+      <td>/posts/:id</td>
+    </tr>
+    <tr>
+      <td>(:users, :index)</td>
+      <td>GET</td>
+      <td>/users</td>
+    </tr>
+    <tr>
+      <td>(:users, :create)</td>
+      <td>POST</td>
+      <td>/users</td>
+    </tr>
+    <tr>
+      <td>(:users, :show)</td>
+      <td>GET</td>
+      <td>/users/:id</td>
+    </tr>
+    <tr>
+      <td>(:users, :update)</td>
+      <td>PUT</td>
+      <td>/users/:id</td>
+    </tr>
+    <tr>
+      <td>(:users, :destroy)</td>
+      <td>DELETE</td>
+      <td>/users/:id</td>
+    </tr>
+  </table>
+    
+</p>
+<p>
+Some examples commands
+</p>
+<p>
+Create a User : curl --data "user[name]=name1&user[age]=22&user[email]=example@example.com" http://api-padrino-mongo.herokuapp.com/users
+</p>
+<p>
+List all Users : http://api-padrino-mongo.herokuapp.com/users
+</p>
+<p>
+Delete a User : curl -i -H "Accept: application/json" -X DELETE hhttp://api-padrino-mongo.herokuapp.com/users/50c7715d35217309ba000028
+</p>
+<p>
+Create a Post for a User : curl -F "post[title]=postTitle1" -F "post[body]=postBody1" -F "post[user_id]=50c71b7c3521730377000001" -F "post[file]=@README.md" http://api-padrino-mongo.herokuapp.com/posts
+</p>
+<p>
+Get the uploaded file : http://api-padrino-mongo.herokuapp.com/system/files/README.md
+</p>
+<p>
+You can search posts on Title and Body attributes by requesting something like : 
+http://api-padrino-mongo.herokuapp.com/search?q=keywords</p>
+
+<p>There is a private attribute for User called Age which is only display if your request contains token=s3cr3t for e.g : http://api-padrino-mongo.herokuapp.com/users?token=s3cr3t</p>
+
+</div>

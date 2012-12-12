@@ -7,7 +7,7 @@ class Augmented < Padrino::Application
 
 
   get "/" do
-    "View readme file on <a href='https://github.com/FlintMakal/api-padrino-mongo'>Github api-padrino-mongo<a/> to understand how to interact with this API"
+    render 'welcome'
   end
 
   ##
